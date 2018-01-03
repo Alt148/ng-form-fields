@@ -1,0 +1,12 @@
+<div [attr.class]="config.class">
+    <div class="ff-label">
+        <label>{{ config.label }}</label>
+    </div>
+    <div class="ff-element">
+        <ng-container
+            ffElement
+            [config]="config"
+            [group]="group">
+        </ng-container>
+    </div>
+</div>

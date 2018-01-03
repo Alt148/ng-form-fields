@@ -1,0 +1,49 @@
+{
+  "_from": "ng4-form-fields",
+  "_id": "ng4-form-fields@0.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-q65W7Iv6kpXtoFL0DdB3bo0cnRFPT/3YOb2fRUaL88BBZfYiSMKhR0xFX3JZADCg8QZb7nwAeJJdJWhHsTx89g==",
+  "_location": "/ng4-form-fields",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ng4-form-fields",
+    "name": "ng4-form-fields",
+    "escapedName": "ng4-form-fields",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng4-form-fields/-/ng4-form-fields-0.1.1.tgz",
+  "_shasum": "f659fdbbbdbde4b38770e29bd2400ecdd53c97b8",
+  "_spec": "ng4-form-fields",
+  "_where": "D:\\Opdrachten\\GlobeScope\\Toezichtformulier\\TZH_app\\www",
+  "author": {
+    "name": "Jörgen de Groot"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Package for Angular 4 and up for generating form elements. The form needs to be setup in de component and de input fields will be imported by a config array.",
+  "keywords": [
+    "ng2",
+    "angular",
+    "4",
+    "input",
+    "elements",
+    "form",
+    "select",
+    "search"
+  ],
+  "license": "ISC",
+  "main": "form-fields.component.ts",
+  "name": "ng4-form-fields",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.8"
+}
