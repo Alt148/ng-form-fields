@@ -42,6 +42,10 @@
   "license": "ISC",
   "main": "form-fields.component.ts",
   "name": "ng4-form-fields",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Alt148/ng-form-fields.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
