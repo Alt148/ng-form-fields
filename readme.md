@@ -1,43 +1,24 @@
-# Angular 4 dynamic form field builder
+# ng-form-fields
+Angular 4 dynamic form field builder
 
 Based on https://github.com/toddmotto/angular-dynamic-forms by Todd Motto.
 
 Setup your form in your component and keep control of your input fields with this library.
 
-## Getting Started
+## Usage
 
-```
-npm install ng4-form-fields
-```
+Place you config in your component
 
-### Prerequisites
-
-This package is for use with Angular Reactive forms only.
-
-### Installing
-
-After downloading add the components module to your app module.
-
-```
-import {FormFieldsModule} from 'ng4-form-fields/form-fields.module'
-
-@NgModule({
-  imports: [
-    FormFieldsModule,
-    ReactiveFormsModule // You must use Reactive Forms
-  ]
-})
-```
-Import the interface in your component.
-
-```
-import { FormFieldsConfig } from 'ng4-form-fields/models/form-fields-config';
-```
-
-In your component with the form add a property for all the elements in your form you wish to load dynamic with this library. Here is an example for a number input field.
-
-```
-config: FormFieldsConfig[] = [
+Example of the config array :  
+`config: FormFieldsConfig[] = [
+    {
+      element: 'input',
+      type: 'text',
+      label: 'First name',
+      name: 'name',
+      placeholder: 'Enter your name',
+      validation: [Validators.required, Validators.minLength(4)]
+    },
     {
       element: 'input',
       type: 'number',
@@ -48,54 +29,46 @@ config: FormFieldsConfig[] = [
       step: '5',
       placeholder: 'Enter your name',
       validation: [Validators.required, Validators.minLength(4)]
-    }
-]
-```
-
-Note: I hope to make a small list of various properties you can use, but they are in the FormsFieldsConfig interface.
-
-In your template you can place this code to create all the configured form fields.
-
-```
-    <form [formGroup]="testForm">
-    <!-- This is the directive for the module -->
-      <ff-inputs 
-        *ngFor="let field of config;"
-        [config]="field"
-        [group]="testForm"
-        >
-      </ff-inputs>
-    <!-- The form you must build yourself. -->
-    </form>
-```
-
-## Running the tests
-
-No test written
-
-<!-- ## Deployment
-
-Add additional notes about how to deploy this on a live system -->
-
-<!-- ## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning.
-
-## Authors
-
-* **Jörgen de Groot** - *Initial work* - [Shiftö](https://www.shifto.nl)
-
-<!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
-
-## License
-
-This project is licensed under the ICS License.
-This project is my first NPM module, no support guaranteed
-
-## Acknowledgments
-
-* Todd Moto, thanks for your help on dynamic components in Angular
+    },
+    {
+      element: 'input',
+      type: 'date',
+      label: 'First date',
+      name: 'date',
+      placeholder: 'Enter your name',
+      validation: [Validators.required, Validators.minLength(4)]
+    },
+    {
+      element: 'input',
+      type: 'range',
+      label: 'Range date',
+      name: 'range',
+      min: '10',
+      max: '50',
+      placeholder: 'Enter your name',
+      validation: [Validators.required, Validators.minLength(4)]
+    },
+    {
+      element: 'checkbox',
+      label: 'Check name',
+      name: 'check',
+      placeholder: 'Enter your name',
+    },
+    {
+      element: 'radio',
+      radioValues: [{id: "radio1", text: "Radio 1"}, {id: "radio2", text: "Radio 2"}],
+      name: 'radio',
+      placeholder: 'Enter your name',
+    },
+    {
+      element: 'select',
+      label: 'Favourite Food',
+      name: 'select',
+      // options: ['Pizza', 'Hot Dogs', 'Knakworstje', 'Coffee'],
+      optionsObjects: [{id: 1, text: 'Pizza'}, {id: 2, text: 'Hotdogs'}, {id: 3, text: 'French fries'}],
+      placeholder: 'Select an option',
+      validation: [Validators.required]
+    },
+  ];
+  `
+  Use the `name` property to refer to your formbuilder control.
