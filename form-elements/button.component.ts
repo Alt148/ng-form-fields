@@ -7,7 +7,9 @@ import { FormFieldsConfig } from './../models/form-fields-config';
   template: `
     <div [formGroup]="group">
       <label>{{ config.label }}</label>
-      <input type="{{config.type}}" [attr.placeholder]="config.placeholder">
+      <input type="{{config.type}}" 
+      [attr.placeholder]="config.placeholder"
+      [attr.disabled]="config.disabled !== undefined ? config.disabled : false">
     </div>
   `
 })

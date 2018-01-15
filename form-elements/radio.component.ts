@@ -7,7 +7,9 @@ import { FormFieldsConfig } from './../models/form-fields-config';
 	template: `
 	<ng-container [formGroup]="group">
 		<ng-container *ngFor="let value of config.radioValues;">
-			<input type="radio" [formControlName]="config.name" value="{{value.id}}">{{value.text}}
+			<input type="radio" 
+			[attr.disabled]="config.disabled !== undefined ? config.disabled : false"
+			[formControlName]="config.name" value="{{value.id}}">{{value.text}}
 		</ng-container>
 	</ng-container>
   `

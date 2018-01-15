@@ -13,6 +13,7 @@ import { FormFieldsConfig } from './../models/form-fields-config';
       [attr.min]="config.min !== undefined ? config.min : null"
       [attr.max]="config.max !== undefined ? config.max : null"
       [attr.step]="config.step !== undefined ? config.step : null"
+      [attr.disabled]="config.disabled !== undefined ? config.disabled : false"
       [formControlName]="config.name" >
     </ng-container>
   `

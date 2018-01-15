@@ -7,7 +7,10 @@ import { SearchSelect } from './search-select.component';
 @Component({
   template: `
     <ng-container [formGroup]="group">
-      <select class="config.inputClass" [hidden]="config.options.length > config.maxOptionsLength" [formControlName]="config.name">
+      <select class="config.inputClass" 
+      [hidden]="config.options.length > config.maxOptionsLength"
+      [attr.disabled]="config.disabled !== undefined ? config.disabled : false"
+      [formControlName]="config.name">
         <ng-container *ngIf="config.options">
           <option value="">{{ config.placeholder }}</option>
           <option value="{{optionId(option)}}" *ngFor="let option of config.options" >
@@ -18,8 +21,11 @@ import { SearchSelect } from './search-select.component';
       <ng-container *ngIf="config.options.length > config.maxOptionsLength">
         <input type="hidden" [formControlName]="config.name"> <!--  [attr.value]="inputValue()" -->
         <p class="input-appearance">
-          <span [innerHTML]="currentObject" (click)="openOverlay(config.options, config.name)"></span>
-          <span (click)="clearValue(config.name)">X</span>
+          <span *ngIf="config.disabled === true else enabled">Test</span>
+          <ng-template #enabled>
+            <span [innerHTML]="currentObject" (click)="openOverlay(config.options, config.name)"></span>
+            <span (click)="clearValue(config.name)">X</span>
+          </ng-template>
         </p>
       </ng-container>
     </ng-container>
